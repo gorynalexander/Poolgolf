@@ -20,7 +20,6 @@ public class RotateScript : MonoBehaviour {
     {
         if (col.gameObject.tag == "Ball")
         {
-            Debug.Log("HUI");
             col.gameObject.GetComponent<Rigidbody>().AddForce(force, force, 0);
         }
     }

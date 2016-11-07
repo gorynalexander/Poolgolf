@@ -28,10 +28,11 @@ public class ForceScript : MonoBehaviour {
         if (Input.GetKeyDown("space"))
         {
             // gameObject.transform.Rotate(new Vector3(0, 0, 0));
-            transform.LookAt(arrow);
+            //transform.LookAt(arrow);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(arrow.position - gameObject.transform.position);
             //gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(arrow.position, 0);
 
-            // gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(arrow.position.x, arrow.position.y*-1));
+            // 
 
         }
 
