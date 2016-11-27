@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     public Transform downArrow;
     private Transform temp;
     public float speed;
-    private bool isStarted = false;
+    public static bool isStarted = false;
     private Rigidbody2D gmRigidbody;
     public float speedVal = 1f;
 
