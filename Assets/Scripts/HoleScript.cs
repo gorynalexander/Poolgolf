@@ -12,6 +12,7 @@ public class HoleScript : MonoBehaviour {
     public GameObject nextLevelBtn;
     private bool isLost = false;
     public Text resultText;
+    public Text attemptText;
     private bool isTriggered = false;
     public int countPassedLevels;
     
@@ -50,6 +51,7 @@ public class HoleScript : MonoBehaviour {
     void showResult(int result)
     {
         resultScreen.SetActive(true);
+        attemptText.text = "Attempts : " + PlayerController.attempsCount;
         switch (result)
         {
             case 1:

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     private float startTime;
     public float timer;
     public AudioSource ballHit;
+    public static int attempsCount = 0;
 
 
 
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour {
                 isStarted = true;
                 arrow.SetActive(false);
                 startTime = Time.time;
+                attempsCount++;
             } 
             //gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(arrow.position, 0);
             // 
