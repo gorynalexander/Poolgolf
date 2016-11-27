@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     public static bool canLose = false;
     private float startTime;
     public float timer;
+    public AudioSource ballHit;
 
 
 
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour {
         {
             if (!isStarted)
             {
+                ballHit.Play(0);
                 gmRigidbody.AddForce((arrow.transform.position - gameObject.transform.position)*3);
                 isStarted = true;
                 arrow.SetActive(false);
@@ -91,11 +93,9 @@ public class PlayerController : MonoBehaviour {
 
         if (isStarted)
         {
-
             timer = Time.time - startTime;
             if (timer >= 3f) canLose = true;
         }
-        Debug.Log(canLose);
 
     }
 }
