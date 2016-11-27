@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour {
         gmRigidbody = gameObject.GetComponent<Rigidbody2D>();
         isStarted = false;
         canLose = false;
-
-
     }
 	
 

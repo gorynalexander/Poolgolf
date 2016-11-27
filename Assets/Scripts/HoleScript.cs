@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HoleScript : MonoBehaviour {
 
@@ -12,19 +13,21 @@ public class HoleScript : MonoBehaviour {
     private bool isLost = false;
     public Text resultText;
     private bool isTriggered = false;
-    Transform ballStart;
+    public int countPassedLevels;
     
     void Start()
     {
         isLost = false;
         isTriggered = false;
         resultScreen.SetActive(false);
+        countPassedLevels = PlayerPrefs.GetInt("count");
     }
 
     void Update()
     {
         if (ball.GetComponent<Rigidbody2D>().velocity.magnitude == 0 && PlayerController.canLose && !isLost && !isTriggered)
         {
+            // LOST
             isLost = true;
             Debug.Log("LOST");
             showResult(0);
@@ -40,6 +43,7 @@ public class HoleScript : MonoBehaviour {
             Debug.Log("WON");
             ball.SetActive(false);
             showResult(1);
+            PlayerPrefs.SetInt("count", PlayerPrefs.GetInt("count") + 1);
         }
     }
 
