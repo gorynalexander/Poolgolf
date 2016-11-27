@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour {
     public static bool isStarted = false;
     private Rigidbody2D gmRigidbody;
     public float speedVal = 1f;
+    public static bool canLose = false;
+    private float startTime;
+    public float timer;
 
 
 
@@ -18,7 +21,11 @@ public class PlayerController : MonoBehaviour {
         //gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(1,1,0));
         temp = gameObject.transform;
         gmRigidbody = gameObject.GetComponent<Rigidbody2D>();
-	}
+        isStarted = false;
+        canLose = false;
+
+
+    }
 	
 
 	// Update is called once per frame
@@ -57,6 +64,7 @@ public class PlayerController : MonoBehaviour {
                 gmRigidbody.AddForce((arrow.transform.position - gameObject.transform.position)*3);
                 isStarted = true;
                 arrow.SetActive(false);
+                startTime = Time.time;
             } 
             //gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(arrow.position, 0);
             // 
@@ -83,6 +91,13 @@ public class PlayerController : MonoBehaviour {
 
         }
 
+        if (isStarted)
+        {
+
+            timer = Time.time - startTime;
+            if (timer >= 3f) canLose = true;
+        }
+        Debug.Log(canLose);
 
     }
 }

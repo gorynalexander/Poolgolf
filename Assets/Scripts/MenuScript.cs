@@ -23,6 +23,13 @@ public class MenuScript : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
     }
 
-    
+    public void nextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void restartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 }
