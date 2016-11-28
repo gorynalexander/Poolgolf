@@ -55,9 +55,18 @@ public class HoleScript : MonoBehaviour {
         switch (result)
         {
             case 1:
-                resultText.text = "Result : WINNER";
-                restartBtn.SetActive(false);
-                nextLevelBtn.SetActive(true);
+                if (SceneManager.GetActiveScene().name == "Level4")
+                {
+                    resultText.text = "CONGRATULATION, YOU HAVE FINISHED THE GAME";
+                    restartBtn.SetActive(false);
+                    nextLevelBtn.SetActive(false);
+                } else
+                {
+                    resultText.text = "Result : WINNER";
+                    restartBtn.SetActive(false);
+                    nextLevelBtn.SetActive(true);
+                }
+                
                 break;
             case 0:
                 resultText.text = "Result : LOST";

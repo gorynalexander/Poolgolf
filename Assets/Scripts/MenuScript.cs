@@ -18,7 +18,7 @@ public class MenuScript : MonoBehaviour {
 
     public void backToMainMenu()
     {
-        SceneManager.LoadScene("TestMenu");
+        SceneManager.LoadScene("MenuTest");
     }
 
     public void loadLevel(string sceneName)
