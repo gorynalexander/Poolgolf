@@ -34,6 +34,10 @@ public class MenuScript : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void infoLevel()
+    {
+        SceneManager.LoadScene("infoScene");
+    }
 
     
 

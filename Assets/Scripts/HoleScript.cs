@@ -65,6 +65,7 @@ public class HoleScript : MonoBehaviour {
                     resultText.text = "Result : WINNER";
                     restartBtn.SetActive(false);
                     nextLevelBtn.SetActive(true);
+                    PlayerController.attempsCount = 0;
                 }
                 
                 break;
